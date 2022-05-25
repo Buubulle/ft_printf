@@ -6,13 +6,13 @@
 /*   By: ahalleux <ahalleux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 14:52:22 by ahalleux          #+#    #+#             */
-/*   Updated: 2022/05/25 19:13:01 by ahalleux         ###   ########.fr       */
+/*   Updated: 2022/05/25 23:18:51 by ahalleux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-int	ft_printpointer(unsigned long ptr)
+int	ft_hexadecimal(unsigned long ptr)
 {
 	unsigned int	value;
 
@@ -26,18 +26,18 @@ int	ft_printpointer(unsigned long ptr)
 	{
 		write(1, "0x", 2);
 		value += 2;
-		ft_printhexa(ptr);
-		value += ft_lenhexa(ptr);
+		ft_print_hexa(ptr);
+		value += ft_len_hexa(ptr);
 	}
 	return (value);
 }
 
-void	ft_printhexa(unsigned long ptr)
+void	ft_print_hexa(unsigned long ptr)
 {
 	if (ptr >= 16)
 	{
-		ft_printhexa(ptr / 16);
-		ft_printhexa(ptr % 16);
+		ft_print_hexa(ptr / 16);
+		ft_print_hexa(ptr % 16);
 	}
 	else
 	{
@@ -52,7 +52,7 @@ void	ft_printhexa(unsigned long ptr)
 	}
 }
 
-int	ft_lenhexa(unsigned long ptr)
+int	ft_len_hexa(unsigned long ptr)
 {
 	int		value;
 
