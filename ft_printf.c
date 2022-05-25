@@ -6,7 +6,7 @@
 /*   By: ahalleux <ahalleux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 11:48:00 by ahalleux          #+#    #+#             */
-/*   Updated: 2022/05/25 19:31:01 by ahalleux         ###   ########.fr       */
+/*   Updated: 2022/05/25 23:09:38 by ahalleux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ int main(void)
 
     pointeur = 12545;
     printf("Real Printf \n");
-    printf("%d \n" ,printf("%p", &pointeur));
-    printf("%p", &pointeur);
+    printf("%d \n" ,printf("%d", 650));
+    printf("%d", 650);
     printf("\n ------------ \n");
     printf("My Printf \n");
-    printf("%d \n" ,ft_printf("%p", &pointeur));
-    printf("%p", &pointeur);
+    printf("%d \n" ,ft_printf("%d", 650));
+    printf("%d", 650);
 }
 
 
@@ -66,18 +66,13 @@ int ft_checker(va_list args, const char id)
         value += ft_printstr(va_arg(args, char *));
     else if (id == 'p')
         value += ft_printpointer(va_arg(args, unsigned long));
-    // else if (id == 'd')
-    //     value += ft_
-    // else if (id == 'i')
-    //     return NULL;
+    else if (id == 'd' || id == 'i')
+        value += ft_hexadecimal(va_arg(args, int));
     // else if (id == 'u')
     //     return NULL;
-    // else if (id == 'x')
-    //     return NULL;
-    // else if (id == 'X')
-    //     return NULL;
-    else if (id == '%')
-        write(1, "%", 1);
+    else if (id == 'x' || id == 'X')
+        value += ft_printpointer(va_arg(args, unsigned long), id);
+    // else if (id == '%')
     
     return (value);
 }
