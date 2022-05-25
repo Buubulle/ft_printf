@@ -6,11 +6,11 @@
 #    By: ahalleux <ahalleux@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/25 14:55:56 by ahalleux          #+#    #+#              #
-#    Updated: 2022/05/25 23:20:51 by ahalleux         ###   ########.fr        #
+#    Updated: 2022/05/25 23:37:23 by ahalleux         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = printf.a
+NAME = libftprintf.a
 TEMP = a.out
 NAMEPROG = a.out
 

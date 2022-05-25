@@ -6,7 +6,7 @@
 /*   By: ahalleux <ahalleux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 11:48:00 by ahalleux          #+#    #+#             */
-/*   Updated: 2022/05/25 23:09:38 by ahalleux         ###   ########.fr       */
+/*   Updated: 2022/05/25 23:38:49 by ahalleux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,13 +65,13 @@ int ft_checker(va_list args, const char id)
     else if (id == 's')
         value += ft_printstr(va_arg(args, char *));
     else if (id == 'p')
-        value += ft_printpointer(va_arg(args, unsigned long));
+        value += ft_hexadecimal(va_arg(args, unsigned long));
     else if (id == 'd' || id == 'i')
-        value += ft_hexadecimal(va_arg(args, int));
+        value += ft_decimal(va_arg(args, int));
     // else if (id == 'u')
     //     return NULL;
     else if (id == 'x' || id == 'X')
-        value += ft_printpointer(va_arg(args, unsigned long), id);
+        value += ft_hexadecimal(va_arg(args, unsigned long));
     // else if (id == '%')
     
     return (value);
