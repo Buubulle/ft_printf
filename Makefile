@@ -6,7 +6,7 @@
 #    By: ahalleux <ahalleux@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/25 14:55:56 by ahalleux          #+#    #+#              #
-#    Updated: 2022/05/25 23:37:23 by ahalleux         ###   ########.fr        #
+#    Updated: 2022/05/26 22:54:44 by ahalleux         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,8 @@ FILES = ft_printf_utils \
 			ft_printf \
 			ft_print_hexadecimal \
 			ft_print_decimal \
+			ft_print_unsigned \
+			ft_putnbr_base \
 
 SRCS_DIR = ./
 SRCS = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES)))

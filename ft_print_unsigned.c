@@ -1,65 +1,60 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_decimal.c                                 :+:      :+:    :+:   */
+/*   ft_print_unsigned.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahalleux <ahalleux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/25 21:39:34 by ahalleux          #+#    #+#             */
-/*   Updated: 2022/05/26 20:16:38 by ahalleux         ###   ########.fr       */
+/*   Created: 2022/05/26 18:56:21 by ahalleux          #+#    #+#             */
+/*   Updated: 2022/05/26 19:30:33 by ahalleux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_decimal(int n)
+int	ft_unsigned_decimal(unsigned long u_n)
 {
-	int	value;
+	unsigned int	value;
 
 	value = 0;
-    ft_print_decimal(n);
-    value += ft_len_decimal(n);
-	return (value);
-}
-
-void	ft_print_decimal(int n)
-{
-	if (n == -2147483648)
+	if (u_n == 0)
 	{
-			write(1, "-2147483648", 11);
-			return ;
-	}
-	if (n < 0)
-	{
-		write(1, "-", 1);
-		n = -n;
-	}
-	if (n > 9)
-	{
-		ft_print_decimal(n / 10);
-		ft_printchar((n % 10) + '0');
+		write(1, "0", 1);
+		value++;
 	}
 	else
 	{
-		ft_printchar(n + '0');
+		ft_print_unsigned(u_n);
+		value += ft_len_unsigned(u_n);
+	}
+	return (value);
+}
+
+void	ft_print_unsigned(unsigned long u_n)
+{
+	if (u_n < 0)
+	{
+		
+	}
+	if (u_n > 9)
+	{
+		ft_print_unsigned(u_n / 10);
+		ft_printchar((u_n % 10) + '0');
+	}
+	else
+	{
+		ft_printchar(u_n + '0');
 	}
 }
 
-int	ft_len_decimal(int n)
+int	ft_len_unsigned(unsigned long u_n)
 {
 	int		value;
 
 	value = 0;
-	if (n < 0)
+	while (u_n)
 	{
-		n *= -1;
-		value++;
-	}
-	if (n == 0)
-		value++;
-	while (n)
-	{
-		n /= 10;
+		u_n /= 16;
 		value++;
 	}
 	return (value);
