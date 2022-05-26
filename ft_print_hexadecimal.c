@@ -6,11 +6,11 @@
 /*   By: ahalleux <ahalleux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 14:52:22 by ahalleux          #+#    #+#             */
-/*   Updated: 2022/05/25 23:38:49 by ahalleux         ###   ########.fr       */
+/*   Updated: 2022/05/25 23:52:53 by ahalleux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int	ft_hexadecimal(unsigned long ptr)
 {

@@ -1,21 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libftprintf.h                                      :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahalleux <ahalleux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 13:12:23 by ahalleux          #+#    #+#             */
-/*   Updated: 2022/05/25 23:42:34 by ahalleux         ###   ########.fr       */
+/*   Updated: 2022/05/26 04:04:12 by ahalleux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFTPRINTF_H
-# define LIBFTPRINTF_H
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
 # include <stdio.h>  // a supprimer!!!
 # include <unistd.h>
 # include <stdarg.h>
+# include <limits.h>
 
 int     ft_printf(const char *str, ...);
 int     ft_checker(va_list args, const char id);
@@ -24,9 +25,10 @@ int     ft_printstr(char *str);
 int     ft_hexadecimal(unsigned long ptr);
 void    ft_print_hexa(unsigned long ptr);
 int     ft_len_hexa(unsigned long ptr);
-int	    ft_decimal(unsigned long long str);
-void	ft_print_decimal(unsigned long long str);
-int 	ft_len_decimal(unsigned long long str);
+int	    ft_decimal(int n);
+void	ft_print_decimal(int n);
+int 	ft_len_decimal(int n);
 void	ft_putstr(char *s);
+int    ft_print_pourcent(const char c);
 
 #endif

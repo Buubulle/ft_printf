@@ -6,26 +6,26 @@
 /*   By: ahalleux <ahalleux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 11:48:00 by ahalleux          #+#    #+#             */
-/*   Updated: 2022/05/25 23:38:49 by ahalleux         ###   ########.fr       */
+/*   Updated: 2022/05/26 03:56:07 by ahalleux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 
-int main(void)
-{
-    unsigned int pointeur;
+// int main(void)
+// {
+//     unsigned int pointeur;
 
-    pointeur = 12545;
-    printf("Real Printf \n");
-    printf("%d \n" ,printf("%d", 650));
-    printf("%d", 650);
-    printf("\n ------------ \n");
-    printf("My Printf \n");
-    printf("%d \n" ,ft_printf("%d", 650));
-    printf("%d", 650);
-}
+//     pointeur = 12545;
+//     printf("Real Printf \n");
+//     printf("%d \n" ,printf("%d", 0));
+//     printf("%d", 0);
+//     printf("\n ------------ \n");
+//     printf("My Printf \n");
+//     printf("%d \n" ,ft_printf("%d", 0));
+//     ft_printf("%d", 0);
+// }
 
 
 int ft_printf(const char *str, ...)
@@ -67,12 +67,15 @@ int ft_checker(va_list args, const char id)
     else if (id == 'p')
         value += ft_hexadecimal(va_arg(args, unsigned long));
     else if (id == 'd' || id == 'i')
+    {
         value += ft_decimal(va_arg(args, int));
+    }
     // else if (id == 'u')
     //     return NULL;
-    else if (id == 'x' || id == 'X')
-        value += ft_hexadecimal(va_arg(args, unsigned long));
-    // else if (id == '%')
+    // else if (id == 'x' || id == 'X')
+    //     value += ft_hexadecimal(va_arg(args, unsigned long));
+    else if (id == '%')
+        value += ft_print_pourcent(va_arg(args, int));
     
     return (value);
 }

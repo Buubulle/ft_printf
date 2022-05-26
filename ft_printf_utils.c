@@ -6,11 +6,11 @@
 /*   By: ahalleux <ahalleux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 13:13:45 by ahalleux          #+#    #+#             */
-/*   Updated: 2022/05/25 23:38:49 by ahalleux         ###   ########.fr       */
+/*   Updated: 2022/05/26 00:06:54 by ahalleux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int	ft_printchar(int c)
 {
@@ -53,4 +53,10 @@ void	ft_putstr(char *s)
 		ft_printchar(s[i]);
 		i++;
 	}
+}
+
+int ft_print_pourcent(const char c)
+{
+	write(1, &c, 1);
+	return (1);
 }
