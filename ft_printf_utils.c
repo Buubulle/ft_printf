@@ -6,7 +6,7 @@
 /*   By: ahalleux <ahalleux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 13:13:45 by ahalleux          #+#    #+#             */
-/*   Updated: 2022/05/26 19:45:44 by ahalleux         ###   ########.fr       */
+/*   Updated: 2022/05/31 15:57:40 by ahalleux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,4 +59,14 @@ int	ft_print_percent(void)
 {
 	write(1, "%", 1);
 	return (1);
+}
+
+int	ft_strlen(char *str)
+{
+	int i;
+
+	i = 0;
+	while(str[i])
+		i++;
+	return (i);
 }

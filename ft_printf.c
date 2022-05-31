@@ -6,7 +6,7 @@
 /*   By: ahalleux <ahalleux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 11:48:00 by ahalleux          #+#    #+#             */
-/*   Updated: 2022/05/27 16:05:15 by ahalleux         ###   ########.fr       */
+/*   Updated: 2022/05/31 15:43:31 by ahalleux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,9 +69,10 @@ int ft_checker(va_list args, const char id)
 		value += ft_decimal(va_arg(args, int));
 	else if (id == 'u')
 		value += ft_unsigned_decimal(va_arg(args, unsigned long));
-	// else if (id == 'x' || id == 'X')
-	//     value += ft_hexadecimal(va_arg(args, unsigned long));
-	// utiliser un putnbr_base
+	else if (id == 'x')
+	    value += ft_xX_hexadecimal(va_arg(args, unsigned long), id, LOWERCASE_HEXADECIMAL);
+	else if (id == 'X')
+		value += ft_xX_hexadecimal(va_arg(args, unsigned long), id, UPPERCASE_HEXADECIMAL);
 	else if (id == '%')
 		value += ft_print_percent();
 	
