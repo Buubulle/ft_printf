@@ -6,7 +6,7 @@
 /*   By: ahalleux <ahalleux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 21:39:34 by ahalleux          #+#    #+#             */
-/*   Updated: 2022/05/26 20:16:38 by ahalleux         ###   ########.fr       */
+/*   Updated: 2022/06/01 00:13:59 by ahalleux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ int	ft_decimal(int n)
 	int	value;
 
 	value = 0;
-    ft_print_decimal(n);
-    value += ft_len_decimal(n);
+	ft_print_decimal(n);
+	value += ft_len_decimal(n);
 	return (value);
 }
 
@@ -26,8 +26,8 @@ void	ft_print_decimal(int n)
 {
 	if (n == -2147483648)
 	{
-			write(1, "-2147483648", 11);
-			return ;
+		write(1, "-2147483648", 11);
+		return ;
 	}
 	if (n < 0)
 	{

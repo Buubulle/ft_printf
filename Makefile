@@ -6,21 +6,17 @@
 #    By: ahalleux <ahalleux@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/25 14:55:56 by ahalleux          #+#    #+#              #
-#    Updated: 2022/05/26 22:54:44 by ahalleux         ###   ########.fr        #
+#    Updated: 2022/06/01 00:12:53 by ahalleux         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
-TEMP = a.out
 NAMEPROG = a.out
-
-#supprimer la variable TEMP + dans la commande fclean l'ajourde la variable
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 AR = ar rcs
 RM = rm -f
-
 
 FILES = ft_printf_utils \
 			ft_printf \
@@ -48,7 +44,7 @@ clean:
 	$(RM) $(OBJS)
 
 fclean: clean
-	$(RM) $(NAME) $(TEMP) 
+	$(RM) $(NAME) 
 
 
 re: clean all

@@ -6,40 +6,24 @@
 /*   By: ahalleux <ahalleux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 11:48:00 by ahalleux          #+#    #+#             */
-/*   Updated: 2022/05/31 15:43:31 by ahalleux         ###   ########.fr       */
+/*   Updated: 2022/06/01 00:20:03 by ahalleux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-
-// int main(void)
-// {
-// 	// printf("Real Printf \n");
-// 	// printf("%d \n" ,printf("%d", -2147483647));
-// 	// printf("%d", -2147483647);
-// 	// printf("\n ------------ \n");
-// 	// printf("My Printf \n");
-// 	// printf("%d \n" ,ft_printf("%d", -2147483647));
-// 	// ft_printf("%d", -2147483647);
-// 	ft_printf("%d\n", INT_MIN);
-// 	printf("%d\n", INT_MIN);
-// }
-
-
-int ft_printf(const char *str, ...)
+int	ft_printf(const char *str, ...)
 {
-	int i;
-	int value;
-	va_list args;
-
+	int		i;
+	int		value;
+	va_list	args;
 
 	i = 0;
 	value = 0;
 	va_start(args, str);
-	while(str[i])
+	while (str[i])
 	{
-		if(str[i] == '%')
+		if (str[i] == '%')
 		{
 			value += ft_checker(args, str[i + 1]);
 			i += 2;
@@ -54,9 +38,9 @@ int ft_printf(const char *str, ...)
 	return (value);
 }
 
-int ft_checker(va_list args, const char id)
+int	ft_checker(va_list args, const char id)
 {
-	int value;
+	int	value;
 
 	value = 0;
 	if (id == 'c')
@@ -68,13 +52,12 @@ int ft_checker(va_list args, const char id)
 	else if (id == 'd' || id == 'i')
 		value += ft_decimal(va_arg(args, int));
 	else if (id == 'u')
-		value += ft_unsigned_decimal(va_arg(args, unsigned long));
+		value += ft_unsigned_decimal(va_arg(args, int), BASE_DECIMAL);
 	else if (id == 'x')
-	    value += ft_xX_hexadecimal(va_arg(args, unsigned long), id, LOWERCASE_HEXADECIMAL);
+		value += ft_xx_base(va_arg(args, int), id, LOWERCASE_HEXADECIMAL);
 	else if (id == 'X')
-		value += ft_xX_hexadecimal(va_arg(args, unsigned long), id, UPPERCASE_HEXADECIMAL);
+		value += ft_xx_base(va_arg(args, int), id, UPPERCASE_HEXADECIMAL);
 	else if (id == '%')
 		value += ft_print_percent();
-	
 	return (value);
 }

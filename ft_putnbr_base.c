@@ -6,46 +6,63 @@
 /*   By: ahalleux <ahalleux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 22:54:03 by ahalleux          #+#    #+#             */
-/*   Updated: 2022/05/31 16:00:08 by ahalleux         ###   ########.fr       */
+/*   Updated: 2022/06/01 00:20:19 by ahalleux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_xX_hexadecimal(unsigned long n, char id, char *base)
+int	ft_xx_base(int n, char id, char *base)
 {
-    unsigned int	value;
+	unsigned int	value;
 
 	value = 0;
 	if (n == 0)
 	{
-		write(1, "0x0", 3);
-		value += 3;
+		write(1, "0", 1);
+		value += 1;
 	}
 	else
 	{
-        write(1, "0x", 2);
-		value += 2;
-        if (id == 'x')
-        {
-            ft_lowercase_x(n, base);
-            value += ft_len_hexa(n);
-        }
-        else
-        {
-            ft_uppercase_X(n, base);
-            value += ft_len_hexa(n);
-        }
+		if (id == 'x')
+			value += ft_printxbase(n, base);
+		else
+			value += ft_printxbase(n, base);
 	}
 	return (value);
 }
 
-void    ft_lowercase_x(unsigned long n, char *base)
+int	ft_printxbase(int n, char *base)
 {
-	
-}
+	unsigned int		size_base;
+	int					i;
+	unsigned int		nbr;
+	int					value;
 
-void    ft_uppercase_X(unsigned long n, char *base)
-{
-    
+	value = 0;
+	nbr = n;
+	i = 0;
+	size_base = 0;
+	while (base[size_base])
+	{
+		size_base++;
+	}
+	while (n)
+	{
+		n /= size_base;
+		value++;
+	}
+	if (nbr < 0)
+	{
+		nbr = -n;
+		ft_printchar('-');
+	}
+	if (nbr < size_base)
+		ft_printchar(base[nbr]);
+	if (nbr >= size_base)
+	{
+		ft_printxbase(nbr / size_base, base);
+		ft_printxbase(nbr % size_base, base);
+	}
+	return (value);
 }
