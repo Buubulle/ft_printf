@@ -6,17 +6,15 @@
 /*   By: ahalleux <ahalleux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 13:12:23 by ahalleux          #+#    #+#             */
-/*   Updated: 2022/06/01 00:19:58 by ahalleux         ###   ########.fr       */
+/*   Updated: 2022/06/01 17:04:19 by ahalleux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-# include <stdio.h>  // a supprimer!!!
 # include <unistd.h>
 # include <stdarg.h>
-# include <limits.h>
 
 # define LOWERCASE_HEXADECIMAL "0123456789abcdef"
 # define UPPERCASE_HEXADECIMAL "0123456789ABCDEF"
@@ -31,7 +29,6 @@ int		ft_printchar(int c);
 int		ft_printstr(char *str);
 void	ft_putstr(char *s);
 int		ft_print_percent(void);
-int		t_strlen(char *str);
 
 /*********************************
 ** Include Hexadecimal function **

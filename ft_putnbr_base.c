@@ -6,7 +6,7 @@
 /*   By: ahalleux <ahalleux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 22:54:03 by ahalleux          #+#    #+#             */
-/*   Updated: 2022/06/01 00:20:19 by ahalleux         ###   ########.fr       */
+/*   Updated: 2022/06/01 17:03:27 by ahalleux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,18 +44,11 @@ int	ft_printxbase(int n, char *base)
 	i = 0;
 	size_base = 0;
 	while (base[size_base])
-	{
 		size_base++;
-	}
 	while (n)
 	{
 		n /= size_base;
 		value++;
-	}
-	if (nbr < 0)
-	{
-		nbr = -n;
-		ft_printchar('-');
 	}
 	if (nbr < size_base)
 		ft_printchar(base[nbr]);

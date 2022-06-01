@@ -6,7 +6,7 @@
 /*   By: ahalleux <ahalleux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 13:13:45 by ahalleux          #+#    #+#             */
-/*   Updated: 2022/05/31 15:57:40 by ahalleux         ###   ########.fr       */
+/*   Updated: 2022/06/01 16:37:12 by ahalleux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_printchar(int c)
 
 int	ft_printstr(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (str == NULL)
@@ -28,17 +28,12 @@ int	ft_printstr(char *str)
 		ft_putstr("(null)");
 		return (6);
 	}
-	while(str[i])
+	while (str[i])
 	{
 		ft_printchar(str[i]);
 		i++;
 	}
 	return (i);
-}
-
-void	ft_putchar_fd(char c, int fd)
-{
-	write(fd, &c, 1);
 }
 
 void	ft_putstr(char *s)
@@ -59,14 +54,4 @@ int	ft_print_percent(void)
 {
 	write(1, "%", 1);
 	return (1);
-}
-
-int	ft_strlen(char *str)
-{
-	int i;
-
-	i = 0;
-	while(str[i])
-		i++;
-	return (i);
 }
